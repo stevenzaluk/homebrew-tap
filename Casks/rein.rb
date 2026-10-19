@@ -2,8 +2,8 @@
 # scripts/release.sh fills in the version and checksum and pushes it there;
 # change it here, not in the tap.
 cask "rein" do
-  version "0.7.0"
-  sha256 "5bfce07898062480317cc6712dcdb62c7477e8223809dc608eb02ad59b9d014c"
+  version "0.8.0"
+  sha256 "e33dd019791e78268631e57bb6c0cb404c036bb54d0eded23c2158aa2e8d9844"
 
   url "https://github.com/stevenzaluk/homebrew-tap/releases/download/rein-v#{version}/Rein-#{version}-arm64.zip"
   name "Rein"
