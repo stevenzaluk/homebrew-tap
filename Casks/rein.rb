@@ -2,8 +2,8 @@
 # scripts/release.sh fills in the version and checksum and pushes it there;
 # change it here, not in the tap.
 cask "rein" do
-  version "0.14.0"
-  sha256 "f75cf10e995fd41a6eb0c07530e9472d37986b57ad95f80c54c8a3a6d8a46fec"
+  version "0.15.0"
+  sha256 "d59471fa29c735db9b7fc5df0501c941afed18c3be758b0b670f8627155ec47c"
 
   url "https://github.com/stevenzaluk/homebrew-tap/releases/download/rein-v#{version}/Rein-#{version}-arm64.zip"
   name "Rein"
@@ -16,8 +16,8 @@ cask "rein" do
   app "Rein.app"
   binary "#{appdir}/Rein.app/Contents/Resources/rein"
 
-  # Rein is signed ad hoc, not with an Apple Developer ID, so macOS would
-  # refuse to open it the first time. Installing it from this tap is the
+  # Rein is signed with its own certificate, not an Apple Developer ID, so
+  # macOS would refuse to open it the first time. Installing it from this tap is the
   # consent to run it, so the quarantine flag the download got is cleared.
   postflight_steps do
     run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Rein.app"]
